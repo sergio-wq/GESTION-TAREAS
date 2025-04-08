@@ -109,6 +109,8 @@ function App() {
           />
         </div>
       </div>
+       <footer className="mt-8 text-center text-sm text-white">&copy;{new Date().getFullYear()} Gestion de Tareas. Todos los derechos reservados a Sergio Ruiz.
+    </footer>
     </div>
   );
 }

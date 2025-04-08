@@ -54,6 +54,8 @@ function TaskForm({ addTask, editingTask, updateTask, cancelEditing }) {
             type="text"
             id="title"
             value={title}
+            autoFocus
+            pattern='[A-Za-z0-9 ]{3,50}'
             onChange={(e) => setTitle(e.target.value)}
             className="w-full px-3 py-2 bg-white bg-opacity-20 text-white placeholder-gray-300 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             placeholder="Ingresa el título de la tarea"
@@ -72,8 +74,12 @@ function TaskForm({ addTask, editingTask, updateTask, cancelEditing }) {
             className="w-full px-3 py-2 bg-white bg-opacity-20 text-white placeholder-gray-300 border border-white border-opacity-30 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-400 focus:border-transparent"
             rows="3"
             placeholder="Ingresa la descripción (opcional)"
+           // maxLength={100}
           ></textarea>
         </div>
+      <p className='text-white text-right mb-5'>
+        {description.length}/100
+      </p>
         
         <div className="flex justify-end">
           {editingTask && (
